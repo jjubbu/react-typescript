@@ -1,3 +1,4 @@
+import { setDefaultResultOrder } from 'dns/promises';
 import React from 'react';
 import Button from './elements/Button';
 function App() {
@@ -20,6 +21,11 @@ function App() {
     }
   }
 
+  const enterClick = () => {
+    let result = eval(number);
+    alert(result)
+  }
+
     return (
         <div className="App">
             <h3>정말정말 간단한 계산기</h3>
@@ -32,7 +38,7 @@ function App() {
               return <button key={i} onClick={()=>{numberClick(l,'math')}}>{l}</button>
             })}
             <br/>
-            <button>enter</button>
+            <button onClick={enterClick}>enter</button>
         </div>
     );
 }
